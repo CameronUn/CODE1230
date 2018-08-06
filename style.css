@@ -29,23 +29,23 @@ footer {
 	padding: 1%;
 }
 
-.topnav{
-	position:fixed;
-	top:0;
-	background-color: #DDDDDD;
+.vertical-menu {
+    width: 200px;
 }
 
-.topnav a {
-	float:left;
-	display:block;
-	color:#a50000;
-	text-align: center;
-	padding:14px 16px;
-	text-decoration: none;
-	font-size:20px;
+.vertical-menu a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
 }
 
-.topnav a:hover {
-	background-color: #8c0000;
-	color: #DDDDDD;
+.vertical-menu a:hover {
+    background-color: #ccc;
+}
+
+.vertical-menu a.active {
+    background-color: #4CAF50;
+    color: white;
 }
