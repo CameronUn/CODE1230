@@ -128,4 +128,34 @@
   #cssmenu > ul ul li.collapsed {
     display: block !important;
   }
+  body {
+	background-image: url("http://unifoundconsultants.com/wp-content/uploads/2016/03/home-about.jpg");
+	background-attachment: fixed;
+    	background-position: center;
+	color: #001f3f;
+	text-align:center;
+	font-family:Helvetica;
+	font-size:24px;;
+}
+
+h1 {
+	border-style: solid;
+	border-width: 10px;
+	border-color: #d80000;
+	padding: 1%;
+	width: 40%;
+	height:10%;
+	margin:auto;
+}
+
+p {
+	font-size:18px;
+}
+
+footer {
+	position:fixed;
+	bottom:0;
+	font-size: 14px;
+	padding: 1%;
+  }
 }
