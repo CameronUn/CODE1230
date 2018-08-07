@@ -12,8 +12,8 @@
   padding: 0;
   margin: 0;
   background: #000000;
-  border: 1px solid #ece6e8;
-  border-bottom: 3px solid #d9ced2;
+  border: 1px solid #006400;
+  border-bottom: 3px solid #006400;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   -o-border-radius: 2px;
@@ -60,7 +60,7 @@
 }
 #cssmenu > ul li.has-sub > a.active,
 #cssmenu > ul li.has-sub > a:hover {
-  background: #006400 url('images/caret.png') no-repeat;
+  background: #000000 url('images/caret.png') no-repeat;
   background-position: 90% 195%;
 }
 #cssmenu > ul li a {
