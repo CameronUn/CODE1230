@@ -132,10 +132,8 @@
     display: block !important;
   }
   body {
-	background-image: url("http://unifoundconsultants.com/wp-content/uploads/2016/03/home-about.jpg");
-	background-attachment: fixed;
-    	background-position: center;
-	color: #001f3f;
+	
+	color: #ffffff;
 	text-align:center;
 	font-family:Helvetica;
 	font-size:24px;;
