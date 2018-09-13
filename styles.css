@@ -159,5 +159,6 @@ footer {
 	bottom:0;
 	font-size: 14px;
 	padding: 1%;
+	margin-left: -200px;
   }
 }
