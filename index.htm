@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Extrude polygons for 3D indoor mapping.</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
+    <script src='./data.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY29vbG1hbmpvZSIsImEiOiJjam0xcnRhNnIwcGZ0M3FwbnU1MHI1NmE1In0.DG3y1dS_w6eETt15ak32ug';
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v9',
+    center: [142, -30],
+    zoom: 5,
+    pitch: 40,
+    bearing: 20
+});
+
+map.on('load', function() {
+    map.addLayer({
+        'id': 'data',
+        'type': 'fill-extrusion',
+        'source': {
+            // GeoJSON Data source used in vector tiles, documented at
+            // https://gist.github.com/ryanbaumann/a7d970386ce59d11c16278b90dde094d
+            'type': 'geojson',
+            'data': data
+        },
+        'paint': {
+            // See the Mapbox Style Specification for details on data expressions.
+            // https://www.mapbox.com/mapbox-gl-js/style-spec/#expressions
+            
+            'fill-extrusion-color': {
+                // Get the fill-extrusion-color from the source 'color' property.
+                'property': '16_train',
+                "stops": [
+                    [10, 'white'],
+                    [25, 'yellow'],
+                    [50, 'orange'],
+                    [150, 'red'],
+                    [300, 'crimson']
+                ]
+            },
+            'fill-extrusion-height': {
+                // Get fill-extrusion-height from the source 'height' property.
+                'property': '16_train_2',
+                "stops": [
+                    [10, 10000],
+                    [25, 20000],
+                    [50, 30000],
+                    [150, 40000],
+                    [300, 50000]
+                    ]
+            },
+
+            // Get fill-extrusion-base from the source 'base_height' property.
+            // 'fill-extrusion-base': 0,
+
+            // Make extrusions slightly opaque for see through indoor walls.
+            'fill-extrusion-opacity': 0.9
+        }
+    });
+});
+</script>
+
+</body>
+</html>
